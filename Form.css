@@ -1,72 +1,155 @@
-header {
-    border-style:solid;
-    border-color:rgb(193, 166, 14);
-    background-image:url(images/marbre.jpg);
-  }
-  .head{
-    font-style:italic;
-    font-size:40px;
-  }
-  .mod{
-    font-style:italic;
-    font-size:25px;
-    font-weight:bold;
-    color:rgb(170, 147, 20);
-    cursor:pointer;
-  }
-  
-  .sub{
-    background-color:rgb(210, 184, 34);
-    padding:8px 15px;
-    font-style:italic;
-    font-size:20px;
-    margin-right:5px;
-  }
-  #butt{
-    cursor:pointer;
-    transition: opacity 0.3s;
-    border-radius:5px;
-  }
-  .sub:hover{
-    opacity:0.7;
-  }
-  #butt:active{
-    opacity:0.3;
-  }
-  
-  .set{
-    background-color:rgb(250, 248, 194);
-    padding:8px 18px;
-    font-style:italic;
-    font-size:20px;
-    transition: background-color 1s,color 1s;
-  
-  }
-  body{
-    justify-content: center; /* horizontal center */
-    align-items: center;     /* vertical center */
-    text-align: center;      /* optional: keeps inline content centered */
-    border-style:solid;
-    border-color:black;
-    background-color:rgb(255, 254, 217);
-    margin:0px;
-  }
-  
-  .imgs{
-    transition: opacity 0.3s;
-  }
-  .imgs:hover{
-    opacity:0.7;
-  }
-  .imgs:active{
-    opacity:0.3;
-  }
-  .nbr-box{
-    width:90px;
-    height:27px;
-    cursor:pointer;
-  }
-  .set:hover{
-    background-color:black;
-    color:rgb(250, 248, 194);
-  }
+*{
+  padding:0;
+  margin:0;
+}
+body{
+  background-image: url(images/pexels-marek-piwnicki-3907296-11513040.jpg);
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: right;
+  background-repeat: no-repeat;
+  padding:20px 140px 140px 140px;
+  font-family:sans-serif;
+  font-weight:bold;
+}
+form{
+  background-color: rgb(15, 71, 101);
+  padding:80px;
+  color:rgb(255, 255, 255);
+  opacity:0.7;
+
+}
+header{
+  margin-bottom:40px;
+  text-align:center;
+  letter-spacing: 2px;
+  font-family:fantasy;
+  color:white;
+  font-style:italic;
+}
+header:hover{
+  text-shadow: 0 0 10px white,
+               0 0 20px white,
+               0 0 30px white;
+  color:rgb(3, 26, 64);
+  transform:scale(1.2);
+}
+label{
+  display:block;
+}
+div{
+  margin:30px 0;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+input[type="tel"],
+input[type="date"],
+input[type="submit"],
+input[type="reset"],
+select{
+  background-color: rgb(54, 97, 137);
+  border:0;
+  width:100%;
+  height:40px;
+  transition:transform 0.15s;
+}
+input[type="reset"]:hover,
+input[type="submit"]:hover{
+  transform:scale(0.95);
+  opacity:0.75;
+}
+input[type="reset"]:active,
+input[type="submit"]:active,
+input[type="text"]:active,
+input[type="email"]:active,
+input[type="password"]:active,
+textarea:active,
+input[type="tel"]:active,
+input[type="date"]:active{
+  transform:scale(0.9);
+  opacity:0.6;
+}
+input::placeholder,
+input[type="date"],
+textarea::placeholder,
+select{
+  color:rgb(192, 190, 190);
+  padding-left:20px;
+}
+.buttons{
+  display:flex;
+  gap:15px;
+}
+
+input[type="submit"]{
+  background-color: rgb(108, 139, 173);
+  color:white;
+  text-align:center;
+  font-weight:700;
+  font-family: sans-serif;
+}
+input[type="reset"]{
+  background-color: rgb(80, 90, 99);
+  color:white;
+  text-align:center;
+  font-weight:700;
+  font-family: sans-serif;
+}
+
+
+.rating-container {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 500px;
+}
+
+.rating-label {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* Star rating styles */
+.rating {
+  display: flex;
+  flex-direction: row-reverse;  /* Key: reverses HTML order */
+  justify-content: center;
+  gap: 6px;
+  font-size: 36px;
+  margin-top: 10px;
+}
+
+/* Hide the radio buttons */
+.rating input {
+  display: none;
+}
+
+/* Style labels (the stars) */
+.rating label {
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  user-select: none; /* Prevent text selection */
+}
+
+.rating label:before {
+  content: '★';
+}
+
+/* Color stars gold when selected or hovered */
+.rating input:checked ~ label {
+  color: #FFD700; /* Gold */
+}
+/* Hover effect: highlight all stars to the left */
+    .rating label:hover,
+    .rating label:hover ~ label {
+      color: #FFED00;
+    }
+
+    
