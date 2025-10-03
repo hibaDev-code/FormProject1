@@ -1,164 +1,237 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Student Registration Form</title>
-        <link rel="stylesheet" href="Form.css">
-    </head>
-    <body>
-        <header id="header" >
-            <br>
-            <h1 class="head">Student Registration Form :</h1>
-            
-        </header>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire d'Inscription des Étudiants</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <header id="header">
+        <br>
+        <h1 class="head">Formulaire d'Inscription des Étudiants :</h1>
+    </header>
+    
+    <!-- Générateur de citations -->
+    <div class="quote-container">
+        <div id="quote-text" class="quote-text">Cliquez sur le bouton pour une citation motivante !</div>
+        <div id="quote-author" class="quote-author"></div>
+        <button id="quote-button" class="quote-button">Nouvelle Citation</button>
+    </div>
+    
+    <form action="index.php" method="post">
+        <div>
+            <label for="fullname" class="mod"><b>Nom complet :</b></label>
+            <input id="fullname" type="text" name="fullname" placeholder="Entrez votre nom complet" required>
+        </div>
         
-        <form action="index.php" method="post">
-              <div >
-                 <label for="fullname" class="mod"><b>Full name :</b></label>
-                 <input id="fullname" type="text" name="fullname" placeholder="Enter your fullname" required>
-              </div>
-              
-              <div>
-                 <label for="email" class="mod"><b>Email:</b></label>
-                 <input id="email" type="email" name="email" placeholder="fullname@gmail.com" required>
-              </div>
+        <div>
+            <label for="email" class="mod"><b>Email :</b></label>
+            <input id="email" type="email" name="email" placeholder="nomcomplet@gmail.com" required>
+        </div>
+        
+        <div>
+            <label for="pass" class="mod"><b>Mot de passe :</b></label>
+            <input id="pass" type="password" placeholder="Entrez votre mot de passe" name="password" required>
+        </div>
+        
+        <!--date de naissance-->
+        <div>
+            <label for="date-b" class="mod">Date de naissance :</label>
+            <input type="date" id="date-b" name="birth-date" required>
+        </div>
+        
+        <!--création d'un radio-->
+        <div>
+            <label class="mod"><b>Genre :</b></label>
+            <label for="male">
+                <input id="male" type="radio" name="gender" value="male">
+                Masculin
+            </label>
             
-            <div>
-                <label for="pass" class="mod"><b>Password :</b></label>
-                <input id="pass" type="password" placeholder="Enter your password" name="password" required>
-            </div>
+            <label for="female">
+                <input id="female" type="radio" name="gender" value="female">
+                Féminin
+            </label>
+        </div>
+        
+        <!--création d'une liste déroulante-->
+        <div>
+            <label for="grd" class="mod"><b>Niveau scolaire</b></label>
+            <select id="grd" name="grade-level">
+                <option value="freshman">Première année</option>
+                <option value="sophomore">Deuxième année</option>
+                <option value="junior">Troisième année</option>
+                <option value="senior">Quatrième année</option>
+            </select>
+        </div>
+        
+        <div>
+            <label for="crs" class="mod">Cours</label>
+            <select id="crs" name="course">
+                <option value="Informatique">Informatique</option>
+                <option value="mathematique">Mathématiques</option>
+                <option value="ST">Sciences et Technologies</option>
+                <option value="biologie">Biologie</option>
+                <option value="science de matiére">Science de la matière</option>
+            </select>
+        </div>
+        
+        <!--création d'une case à cocher-->
+        <div>
+            <label class="mod"><b>Matières préférées :</b></label>
             
-
-            <!--date of birth-->
-            <div>
-                <label for="date-b" class="mod" >Date of birth :</label>
-                <input type="date" id=date-b name="birth-date" required>
-            </div>
-           
-
-            <!--creation of a radio-->
-           <div>
-              <label class="mod"><b>Gender:</b></label>
-                <label for="male">
-                    <input id="male" type="radio" name="gender" value="male" >
-                    male
-                </label>
-                
-                <label for="female">
-                    <input id="female" type="radio" name="gender" value="female">
-                    female
-                </label>
-            </div>
-
-            <!--creation of a dropdown list-->
-            <div>
-                <label for="grd" class="mod"><b>Grade level</b></label>
-                <select id="grd" name="grade-level" >
-                    <option value="freshman">Freshman</option>
-                    <option value="sophomore">Sophomore</option>
-                    <option value="junior">Junior</option>
-                    <option value="senior">Senior</option>
-                </select>
-            </div>
-           
-
-            <div>
-                <label for="crs" class="mod">Courses</label>
-                <select id="crs" name="course">
-                    <option value="Informatique" >Informatique</option>
-                    <option value="mathematique" >Mathematique</option>
-                    <option value="ST" >ST</option>
-                    <option value="biologie" >Biologie</option>
-                    <option value="science de matiére" >Science de matiére</option>
-
-                </select>
-            </div>
+            <label for="analyse">
+                <input id="analyse" type="checkbox" name="fav-sub" value="analyse">
+                Analyse
+            </label>
             
- 
-            <!--creation of a checkbox-->
-            <div>
-                <label class="mod"><b>Favorites subjects :</b></label>
-           
-                
-                <label for="analyse">
-                    <input id="analyse" type="checkbox" name="fav-sub" value="analyse" >
-                    Analyse
-                </label>
+            <label for="ASD">
+                <input id="ASD" type="checkbox" name="fav-sub" value="ASD">
+                Algorithmique & structures de données
+            </label>
             
-                
-                <label for="ASD">
-                    <input id="ASD" type="checkbox" name="fav-sub" value="">
-                    Algorithmique & structures d données
-                </label>
+            <label for="Structure machine">
+                <input id="Structure machine" type="checkbox" name="fav-sub" value="Structure machine">
+                Structure machine
+            </label>
             
-                
-                <label for="Structure machine">
-                    <input id="Structure machine" type="checkbox" name="fav-sub" value="Structure machine">
-                    Structure machine
-                </label>
-           
-                
-                <label for="Algébre">
-                    <input id="Algébre" type="checkbox" name="fav-sub" value="Algébre">
-                    Algébre
-                </label>
+            <label for="Algébre">
+                <input id="Algébre" type="checkbox" name="fav-sub" value="Algébre">
+                Algèbre
+            </label>
             
-               
-                <label for="Physique">
-                    <input id="Physique" type="checkbox" name="fav-sub" value="Physique">
-                    Physique
-                </label>
-            </div>
-            
-
-            <!--creation of textarea BIO-->
-            
-            <div>
-              <label for="bio" class="mod"><b>Bio</b></label>
-              <textarea id="bio" placeholder="a short description about yourself " rows="5" cols="40"></textarea>
-           </div>
-           
-
-           <!--Profile picture upload-->
-           <div >
-             <label for="pic"class="mod"><b>Click here to upload a profile picture!</b></label>
-             <input id="pic" type="file" name="file-prof-pic" value="profile-picture" >
-           </div>
-           
-
-          <!--add phone nbr-->
-          <div id="footer">
-            <label for="nbr" class="mod">Add your legal representative number over here !</label>
+            <label for="Physique">
+                <input id="Physique" type="checkbox" name="fav-sub" value="Physique">
+                Physique
+            </label>
+        </div>
+        
+        <!--création de textarea BIO-->
+        <div>
+            <label for="bio" class="mod"><b>Biographie</b></label>
+            <textarea id="bio" placeholder="Une courte description de vous-même" rows="5" cols="40"></textarea>
+        </div>
+        
+        <!--Téléchargement de photo de profil-->
+        <div>
+            <label for="pic"class="mod"><b>Cliquez ici pour télécharger une photo de profil !</b></label>
+            <input id="pic" type="file" name="file-prof-pic" value="profile-picture">
+        </div>
+        
+        <!--ajouter numéro de téléphone-->
+        <div id="footer">
+            <label for="nbr" class="mod">Ajoutez le numéro de votre représentant légal ici !</label>
             
             <input type="tel" id="nbr" name="tel-nbr" placeholder="  0623569820" class="nbr-box">
-          </div>
-
-          
-
-           <div class="rating">
-             <!-- Stars in reverse order (5 to 1) -->
-              <input type="radio" id="star5" name="rating" value="5">
-              <label for="star5"></label>
-      
-              <input type="radio" id="star4" name="rating" value="4">
-              <label for="star4"></label>
-      
-              <input type="radio" id="star3" name="rating" value="3">
-              <label for="star3"></label>
-      
-              <input type="radio" id="star2" name="rating" value="2">
-              <label for="star2"></label>
-      
-              <input type="radio" id="star1" name="rating" value="1">
-              <label for="star1"></label>
-           </div>
-          <!--submet and reset buttons-->
-           <div class="buttons">
-             <input type="submit" value="submit" class="sub" id="butt">
-             <input type="reset" value="reset" class="set" id="butt">
-           </div>
-           
-        </form> 
-    </body>
+        </div>
         
-    </body>
+        <div class="rating">
+            <!-- Étoiles dans l'ordre inverse (5 à 1) -->
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5"></label>
+            
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4"></label>
+            
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3"></label>
+            
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2"></label>
+            
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1"></label>
+        </div>
+        
+        <!--boutons soumettre et réinitialiser-->
+        <div class="buttons">
+            <input type="submit" value="Soumettre" class="sub" id="butt">
+            <input type="reset" value="Réinitialiser" class="set" id="butt">
+        </div>
+    </form>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const quoteText = document.getElementById('quote-text');
+            const quoteAuthor = document.getElementById('quote-author');
+            const quoteButton = document.getElementById('quote-button');
+            
+            // Tableau de citations motivantes en français
+            const citationsFrancaises = [
+                {
+                    text: "L'éducation est l'arme la plus puissante qu'on puisse utiliser pour changer le monde.",
+                    author: "Nelson Mandela"
+                },
+                {
+                    text: "Le futur appartient à ceux qui croient en la beauté de leurs rêves.",
+                    author: "Eleanor Roosevelt"
+                },
+                {
+                    text: "Le succès n'est pas final, l'échec n'est pas fatal : c'est le courage de continuer qui compte.",
+                    author: "Winston Churchill"
+                },
+                {
+                    text: "La seule façon de faire du bon travail est d'aimer ce que vous faites.",
+                    author: "Steve Jobs"
+                },
+                {
+                    text: "Ne laissez pas ce que vous ne pouvez pas faire interférer avec ce que vous pouvez faire.",
+                    author: "John Wooden"
+                },
+                {
+                    text: "L'expert en quoi que ce soit était autrefois un débutant.",
+                    author: "Helen Hayes"
+                },
+                {
+                    text: "On n'est jamais trop vieux pour se fixer un autre but ou pour rêver un nouveau rêve.",
+                    author: "C.S. Lewis"
+                },
+                {
+                    text: "La persévérance est la clé de la réussite.",
+                    author: "Proverbe français"
+                },
+                {
+                    text: "Chaque expert était un jour un débutant.",
+                    author: "Ralph Waldo Emerson"
+                },
+                {
+                    text: "La connaissance est le pouvoir, mais c'est la pratique qui mène à la maîtrise.",
+                    author: "Proverbe chinois"
+                },
+                {
+                    text: "L'apprentissage est un trésor qui suivra son propriétaire partout.",
+                    author: "Proverbe chinois"
+                },
+                {
+                    text: "La vie est un défi à relever, un bonheur à mériter, une aventure à tenter.",
+                    author: "Mère Teresa"
+                }
+            ];
+            
+            // Fonction pour obtenir une nouvelle citation
+            function obtenirCitation() {
+                quoteText.textContent = 'Chargement...';
+                quoteAuthor.textContent = '';
+                quoteButton.disabled = true;
+                
+                // Utiliser les citations françaises directement
+                const indexAleatoire = Math.floor(Math.random() * citationsFrancaises.length);
+                const citation = citationsFrancaises[indexAleatoire];
+                afficherCitation(citation.text, citation.author);
+            }
+            
+            function afficherCitation(texte, auteur) {
+                quoteText.textContent = `"${texte}"`;
+                quoteAuthor.textContent = `- ${auteur}`;
+                quoteButton.disabled = false;
+            }
+            
+            // Écouteur d'événement pour le bouton de citation
+            quoteButton.addEventListener('click', obtenirCitation);
+            
+            // Charger une citation au chargement de la page
+            obtenirCitation();
+        });
+    </script>
+</body>
 </html>
